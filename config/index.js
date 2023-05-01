@@ -4,10 +4,10 @@ dotenv.config();
 
 export default {
     NODE_ENV: process.env.NODE_ENV,
-    BACKEND_PORT: process.env.BACKEND_PORT,
+    BACKEND_PORT: "5000",
     FRONTEND_PORT: process.env.FRONTEND_PORT,
-    URL: process.env.URL,
-    MONGO_URI: process.env.MONGO_URI,
+    URL: "localhost:5000",
+    MONGO_URI: "mongodb+srv://JHCover:starwars6@cluster0.chvvn.mongodb.net/?retryWrites=true&w=majority",
     MONGO_DB_NAME: process.env.MONGO_DB_NAME,
     JWT_SECRET: process.env.JWT_SECRET,
     EMAIL_SECRET: process.env.EMAIL_SECRET,

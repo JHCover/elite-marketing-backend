@@ -4,9 +4,36 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "transpile": "./node_modules/.bin/babel ./server --out-dir dist-server",
+    "client-install": "npm install --prefix client",
+    "start": "npm run transpile && node -r esm ./dist-server/server.js",
+    "server": "nodemon ./server.js --exec babel-node --presets @babel/preset-env",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "connect-history-api-fallback": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "mongoose": "^7.1.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.1",
+    "socketio": "^1.0.0",
+    "ws": "^8.13.0"
+  }
 }
