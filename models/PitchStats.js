@@ -7,6 +7,7 @@ export const PitchStatsSchema = new Schema(
         noCount: Number,
         streamGoal: Number,
         streamGoalProgress: Number,
+        displayGoal: Boolean,
     }
 )
 
