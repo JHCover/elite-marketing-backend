@@ -34,14 +34,19 @@ app.use(bodyParser.json());
 // DB Config
 const db = `${MONGO_URI}`;
 
+const PitchStats = mongoose.model('PitchStats', pitchStatsSchema);
+
 // Connect to Mongob
 mongoose
     .connect(db, {
+        dbName: "eliteMarketing",
         useNewUrlParser: true,
         useUnifiedTopology: true
     }) // Adding new mongo url parser
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
+
+
 
 // Use Routes
 app.use('/api/pitchStats', pitchStatsRoutes);

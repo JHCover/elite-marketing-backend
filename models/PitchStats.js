@@ -3,7 +3,10 @@ import User from "./User";
 
 export const PitchStatsSchema = new Schema(
     {
-        pitchStats: {type: Object}
+        yesCount: Number,
+        noCount: Number,
+        streamGoal: Number,
+        streamGoalProgress: Number,
     }
 )
 
