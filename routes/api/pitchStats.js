@@ -1,7 +1,6 @@
 import { Router } from 'express';
 // User Model
 import PitchStats from '../../models/PitchStats';
-import Event from '../../models/Event';
 
 const router = Router();
 
